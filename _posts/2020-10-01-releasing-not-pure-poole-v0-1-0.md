@@ -6,5 +6,5 @@ tags:
 - jekyll theme
 - jekyll
 date: 2020-10-01 13:56 +0800
-conf:AAAI_2025
+conf: AAAI_2025
 ---
