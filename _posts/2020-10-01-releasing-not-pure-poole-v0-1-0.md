@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Releasing Not Pure Poole v0.1.0
-author: Amirmahdi Mirfakhar, Xuxhuang Wang
+title: Heterogenious Multi Agent Bandits with Parsimonious Hints
+author: Amirmahdi Mirfakhar, Xuxhuang Wang, Yair Zick, Jingang Zuo, Mohammad Hajiesmaili
 tags:
 - jekyll theme
 - jekyll
