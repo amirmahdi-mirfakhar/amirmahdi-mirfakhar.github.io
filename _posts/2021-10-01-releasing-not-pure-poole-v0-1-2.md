@@ -1,10 +1,10 @@
 ---
 layout: ongoing
-title: An Efficient Data structure for Multi-Dimensional Online Learning
-author: Amirmahdi Mirfakhar, Hedyeh Beyhaghi
+title: Learning Online Stable Matchings with Interviews
+author: Amirmahdi Mirfakhar, Xuchuang Wang, Hedyeh Beyhaghi, Mengfan Xu, Mohammad HajiEsmaili 
 tags:
 - Online_Learning
-- Data_Structures
+- Matching_Markets
 date: 2021-10-01 13:56 +0800
 conf: TBD
 ---
