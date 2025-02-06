@@ -126,3 +126,34 @@
   border: 1px solid var(--border-color);
   border-radius: .5em;
 }
+
+.bio-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #0073e6;
+            border-bottom: 3px solid #0073e6;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .projects-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #ff6b00;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            background: linear-gradient(to right, #ff6b00, #ff9b4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .publications-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #4CAF50;
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+            background-color: #e9f5e9;
+            padding: 5px 15px;
+            border-radius: 8px;
+            display: inline-block;
+        }
