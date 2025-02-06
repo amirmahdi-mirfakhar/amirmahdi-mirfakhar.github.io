@@ -56,7 +56,7 @@ layout: default
 
 <div class="posts">
   <h2 class="publications-title">Ongoing Projects</h2>
-  {% for post in paginator.posts %}
+  {% for post in paginator.ongoing %}
   <section class="post-entry">
     <h2 class="post-title">
       <a href="{{ post.url | relative_url }}">
