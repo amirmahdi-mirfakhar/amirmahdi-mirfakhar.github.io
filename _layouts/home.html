@@ -27,6 +27,7 @@ layout: default
 <div class="posts">
   <h2 class="bio-title">Publications</h2>
   {% for post in paginator.posts %}
+  {%- if post.layout == "post" -%}
   <section class="post-entry">
     <h2 class="post-title">
       <a href="{{ post.url | relative_url }}">
@@ -47,6 +48,7 @@ layout: default
 
     <p>{{ post.excerpt | strip_html }}</p>
   </section>
+  {%- endif -%}
   {% endfor %}
   {%- if jekyll.environment == "production" and site.disqus -%}
     <script id="dsq-count-scr" src="//{{ site.disqus }}.disqus.com/count.js" async></script>
