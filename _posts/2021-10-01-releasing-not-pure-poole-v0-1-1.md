@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: ongoing
 title: Heterogenious Multi_Agent Bandits with Parsimonious Hints
 author: Amirmahdi Mirfakhar, Xuchuang Wang, Jingang Zuo, Yair Zick, Mohammad Hajiesmaili
 tags:
