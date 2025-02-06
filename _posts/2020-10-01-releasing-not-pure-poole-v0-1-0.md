@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Heterogenious Multi Agent Bandits with Parsimonious Hints
-author: Amirmahdi Mirfakhar, Xuchuang Wang, Yair Zick, Jingang Zuo, Mohammad Hajiesmaili
+author: Amirmahdi Mirfakhar, Xuchuang Wang, Jingang Zuo, Yair Zick, Mohammad Hajiesmaili
 tags:
 - jekyll theme
 - jekyll
