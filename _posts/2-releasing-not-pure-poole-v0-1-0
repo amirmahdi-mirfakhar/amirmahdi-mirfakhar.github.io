@@ -1,10 +1,10 @@
 ---
 layout: post
-title: An Efficient Data Structure for Multi-Dimensional Online Learning
-author: Amirmahdi Mirfakhar, Hedyeh Beyhaghi
+title: Heterogenious Multi_Agent Bandits with Parsimonious Hints
+author: Amirmahdi Mirfakhar, Xuchuang Wang, Jingang Zuo, Yair Zick, Mohammad Hajiesmaili
 tags:
-- Online_Learning
-- Data_Structure
+- jekyll theme
+- jekyll
 date: 2021-10-01 13:56 +0800
-conf: TBD
+conf: AAAI_2025
 ---
