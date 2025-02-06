@@ -1,6 +1,6 @@
 ---
 layout: ongoing
-title: Learning Online Stable Matchings with Interviews
+title: Learning Stable Matchings with Interviews
 author: Amirmahdi Mirfakhar, Xuchuang Wang, Hedyeh Beyhaghi, Mengfan Xu, Mohammad HajiEsmaili 
 tags:
 - Online_Learning
