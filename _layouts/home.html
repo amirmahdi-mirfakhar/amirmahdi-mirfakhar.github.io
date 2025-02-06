@@ -4,7 +4,7 @@ layout: default
 
 {% include home-header.html %}
 <div class="section">
-            <h2>About Me</h2>
+            <h2 class="bio-title">About Me</h2>
         <p>
             I’m a <strong>third-year Ph.D. student</strong> in <strong>Computer Science</strong> at <strong>UMass Amherst</strong>, working at the intersection of 
             <strong>decision-making under uncertainty an Econ\CS</strong>. 
@@ -23,8 +23,9 @@ layout: default
             aiming to design efficient algorithms that balance exploration and exploitation in uncertain environments.
         </p>
         </div>
+
 <div class="posts">
-  <h2>Publications</h2>
+  <h2 class="projects-title">Publications</h2>
   {% for post in paginator.posts %}
   <section class="post-entry">
     <h2 class="post-title">
@@ -52,8 +53,9 @@ layout: default
     <script id="dsq-count-scr" src="//{{ site.disqus }}.disqus.com/count.js" async></script>
   {%- endif -%}
 </div>
+
 <div class="posts">
-  <h2>Ongoing Projects</h2>
+  <h2 class="publications-title">Ongoing Projects</h2>
   {% for post in paginator.posts %}
   <section class="post-entry">
     <h2 class="post-title">
