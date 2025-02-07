@@ -1,5 +1,5 @@
 ---
-layout: ongoing
+layout: post
 title: Learning Stable Matchings with Interviews
 author: Amirmahdi Mirfakhar, Xuchuang Wang, Mengfan Xu, Hedyeh Beyhaghi, Mohammad Hajiesmaili 
 tags:
