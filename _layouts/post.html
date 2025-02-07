@@ -50,16 +50,26 @@ layout: default
     
     <div id="output"></div>
 
+    <body>
+
+    <h2>Rendered LaTeX Output</h2>
+    <div id="output"></div>
+
     <script>
-        function updateLatex() {
-            let input = document.getElementById("latexInput").value;
+        // Define the LaTeX code to be rendered
+        let latexCode = "E = mc^2"; // Change this to any LaTeX expression
+
+        function renderLatex(code) {
             let outputDiv = document.getElementById("output");
-            outputDiv.innerHTML = `\\[ ${input} \\]`; // MathJax inline rendering
+            outputDiv.innerHTML = `\\[ ${code} \\]`; // MathJax block rendering
             MathJax.typesetPromise();
         }
 
-        document.getElementById("latexInput").addEventListener("input", updateLatex);
+        // Render LaTeX when the page loads
+        renderLatex(latexCode);
     </script>
+
+</body>
 
 </body>
 
