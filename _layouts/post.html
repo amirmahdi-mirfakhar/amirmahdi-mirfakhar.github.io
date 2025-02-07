@@ -2,6 +2,34 @@
 layout: default
 ---
 
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        textarea {
+            width: 80%;
+            height: 100px;
+            font-size: 16px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            min-height: 50px;
+            border: 1px solid #ddd;
+            background: #f9f9f9;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+    </style>
+
 <article class="post">
   <h1 class="post-title">{{ page.title }}</h1>
   <div class="post-meta">
