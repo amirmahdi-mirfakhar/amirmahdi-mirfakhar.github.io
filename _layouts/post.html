@@ -43,7 +43,25 @@ layout: default
   </div>
 
   {{ content }}
-  ya abalfaz
+  <body>
+
+    <h2>Live LaTeX Renderer</h2>
+    <textarea id="latexInput" placeholder="Enter LaTeX code, e.g., E = mc^2"></textarea>
+    
+    <div id="output"></div>
+
+    <script>
+        function updateLatex() {
+            let input = document.getElementById("latexInput").value;
+            let outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = `\\[ ${input} \\]`; // MathJax inline rendering
+            MathJax.typesetPromise();
+        }
+
+        document.getElementById("latexInput").addEventListener("input", updateLatex);
+    </script>
+
+</body>
 
   {% if page.tags %}
     {% include post-tags.html %}
