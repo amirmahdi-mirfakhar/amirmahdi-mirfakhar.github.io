@@ -2,17 +2,9 @@
 layout: default
 ---
 
-<script>
-    window.MathJax = {
-        tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']],
-            displayMath: [['\\[', '\\]']],
-            packages: {'[+]': ['textmacros']}  // Enable \texttt and other text commands
-        },
-        svg: { fontCache: 'global' }
-    };
-</script>
+
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 
 
 <style>
@@ -60,18 +52,36 @@ layout: default
     <div id="output"></div>
 
     <script>
-        // Define the LaTeX code to be rendered
-        let latexCode = `{{ page.abstract | strip_newlines | escape }}`; // Change this to any LaTeX expression
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['\\[', '\\]']],
+            packages: {'[+]': ['textmacros']} // Enable \texttt{}
+        },
+        svg: { fontCache: 'global' }
+    };
 
-        function renderLatex(code) {
-            let outputDiv = document.getElementById("output");
-            outputDiv.innerHTML = `\\[ ${code} \\]`; // MathJax block rendering
-            MathJax.typesetPromise();
+    function renderLatex(code) {
+        let outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = `\\[ ${code} \\]`;  // Block math rendering
+
+        // Ensure MathJax is loaded before trying to re-render
+        if (window.MathJax && typeof MathJax.typesetPromise === "function") {
+            MathJax.typesetPromise()
+                .then(() => console.log("MathJax Rendered Successfully"))
+                .catch(err => console.error("MathJax Rendering Error:", err.message));
+        } else {
+            console.warn("MathJax not loaded yet. Retrying in 500ms...");
+            setTimeout(() => renderLatex(code), 500); // Retry rendering
         }
+    }
 
-        // Render LaTeX when the page loads
+    document.addEventListener("DOMContentLoaded", () => {
+        let latexCode = `{{ page.abstract | strip_newlines | escape }}`;
         renderLatex(latexCode);
-    </script>
+    });
+</script>
+
 
 </body>
 
