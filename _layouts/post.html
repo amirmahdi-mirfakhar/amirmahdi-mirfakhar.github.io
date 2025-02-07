@@ -77,7 +77,7 @@ layout: default
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-        let latexCode = `{{ page.abstract | strip_newlines | escape }}`;
+        let latexCode = `{{ page.abstract | strip_newlines}}`;
         renderLatex(latexCode);
     });
 </script>
