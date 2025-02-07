@@ -72,7 +72,7 @@ layout: default
                 .catch(err => console.error("MathJax Rendering Error:", err.message));
         } else {
             console.warn("MathJax not loaded yet. Retrying in 500ms...");
-            setTimeout(() => renderLatex(code), 500); // Retry rendering
+            setTimeout(() => renderLatex(code), 1500); // Retry rendering
         }
     }
 
