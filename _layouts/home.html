@@ -22,6 +22,27 @@ layout: default
 
         </div>
 
+<div class="posts">
+  <h2 class="bio-title">Publications</h2>
+  {% for post in paginator.posts %}
+  {%- if post.layout == "post" -%}
+  <section class="post-entry">
+    <h2 class="post-title">
+      <a href="{{ post.url | relative_url }}">
+        {{ post.title }} <span class="conf">({{ post.conf }})</span>
+      </a>
+    </h2>
+
+    <div class="post-meta">
+      {{ post.author }} 
+    
+    </div>
+
+    <p>{{ post.excerpt | strip_html }}</p>
+  </section>
+  {%- endif -%}
+  {% endfor %}
+</div>
 
 <div class="posts">
   <h2 class="publications-title">Ongoing Projects</h2>
@@ -44,26 +65,6 @@ layout: default
   {% endfor %}
 </div>
 
-<div class="posts">
-  <h2 class="bio-title">Publications</h2>
-  {% for post in paginator.posts %}
-  {%- if post.layout == "post" -%}
-  <section class="post-entry">
-    <h2 class="post-title">
-      <a href="{{ post.url | relative_url }}">
-        {{ post.title }} <span class="conf">({{ post.conf }})</span>
-      </a>
-    </h2>
 
-    <div class="post-meta">
-      {{ post.author }} 
-    
-    </div>
-
-    <p>{{ post.excerpt | strip_html }}</p>
-  </section>
-  {%- endif -%}
-  {% endfor %}
-</div>
 
 
