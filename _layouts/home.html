@@ -22,35 +22,48 @@ layout: default
 
         </div>
 
-{% assign categories = "post:Publications,ongoing:Ongoing Projects" | split: "," %}
+<div class="posts">
+  <h2 class="bio-title">Publications</h2>
+  {% for post in paginator.posts %}
+  {%- if post.layout == "post" -%}
+  <section class="post-entry">
+    <h2 class="post-title">
+      <a href="{{ post.url | relative_url }}">
+        {{ post.title }} <span class="conf">({{ post.conf }})</span>
+      </a>
+    </h2>
 
-{% for category in categories %}
-  {% assign parts = category | split: ":" %}
-  {% assign layout = parts[0] %}
-  {% assign title = parts[1] %}
+    <div class="post-meta">
+      {{ post.author }} 
+    
+    </div>
 
-  <div class="posts">
-    <h2 class="bio-title">{{ title }}</h2>
-    {% for post in paginator.posts %}
-      {%- if post.layout == layout -%}
-      <section class="post-entry">
-        <h2 class="post-title">
-          <a href="{{ post.url | relative_url }}">
-            {{ post.title }} 
-            {% if layout == "post" %}<span class="conf">({{ post.conf }})</span>{% endif %}
-          </a>
-        </h2>
+    <p>{{ post.excerpt | strip_html }}</p>
+  </section>
+  {%- endif -%}
+  {% endfor %}
+</div>
 
-        <div class="post-meta">
-          {{ post.author }} 
-        </div>
+<div class="posts">
+  <h2 class="publications-title">Ongoing Projects</h2>
+  {% for post in paginator.posts %}
+  {%- if post.layout == "ongoing" -%}
+  <section class="post-entry">
+    <h2 class="post-title">
+      <a href="{{ post.url | relative_url }}">
+        {{ post.title }} 
+      </a>
+    </h2>
 
-        <p>{{ post.excerpt | strip_html }}</p>
-      </section>
-      {%- endif -%}
-    {% endfor %}
-  </div>
-{% endfor %}
+    <div class="post-meta">
+      {{ post.author }} 
+    </div>
+
+    <p>{{ post.excerpt | strip_html }}</p>
+  </section>
+  {%- endif -%}
+  {% endfor %}
+</div>
 
 
 
