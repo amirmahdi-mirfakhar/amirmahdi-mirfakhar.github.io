@@ -49,37 +49,37 @@ layout: default
   <body>
 
     <h2>Abstract</h2>
-    <div id="output"></div>
+    <div id="output">
+  {{ page.abstract | markdownify }}
+    </div>
 
-    <script>
+   <script>
     window.MathJax = {
         tex: {
             inlineMath: [['$', '$'], ['\\(', '\\)']],
             displayMath: [['\\[', '\\]']],
-            packages: {'[+]': ['textmacros']} // Enable \texttt{}
+            packages: {'[+]': ['textmacros']}  // Enables \texttt{}
         },
         svg: { fontCache: 'global' }
     };
 
-    function renderLatex(code) {
+    function renderLatex() {
         let outputDiv = document.getElementById("output");
-        outputDiv.innerHTML = `\\[ ${code} \\]`;  // Block math rendering
 
-        // Ensure MathJax is loaded before trying to re-render
+        // Wrap the entire content inside MathJax block rendering
+        outputDiv.innerHTML = `\\[ ${outputDiv.innerHTML} \\]`;
+
         if (window.MathJax && typeof MathJax.typesetPromise === "function") {
             MathJax.typesetPromise()
                 .then(() => console.log("MathJax Rendered Successfully"))
                 .catch(err => console.error("MathJax Rendering Error:", err.message));
         } else {
-            console.warn("MathJax not loaded yet. Retrying in 500ms...");
-            setTimeout(() => renderLatex(code), 1500); // Retry rendering
+            console.warn("MathJax not loaded yet. Retrying...");
+            setTimeout(renderLatex, 500);
         }
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-        let latexCode = `{{ page.abstract | strip_newlines}}`;
-        renderLatex(latexCode);
-    });
+    document.addEventListener("DOMContentLoaded", renderLatex);
 </script>
 
 
