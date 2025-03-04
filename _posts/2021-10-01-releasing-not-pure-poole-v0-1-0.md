@@ -8,7 +8,7 @@ tags:
 - Matching_Markets
 date: 2021-10-01 13:56 +0800
 conf: AAAI_2025
-url: https://arxiv.org/abs/2502.16128
+link: https://arxiv.org/abs/2502.16128
 abstract: |
   We study a hinted heterogeneous multi-agent multi-armed bandits problem (HMA2B), 
   where agents can query low-cost observations (hints) in addition to pulling arms. 
