@@ -29,7 +29,8 @@ layout: default
     </style>
 
 <article class="post">
-  <h1 class="post-title">{{ page.title }} <a href="{{page.link}}" target="_blank">
+  <h1 class="post-title">{{ page.title }} </h1> 
+  <a href="{{page.link}}" target="_blank">
     style="color: #d32f2f; font-weight: bold; text-decoration: none; border-bottom: 2px solid #d32f2f; padding-right: 5px;">
     arxiv 
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Icon_External_Link.png" 
@@ -37,7 +38,7 @@ layout: default
          width="12" 
          height="12" 
          style="vertical-align: middle; margin-left: 5px;">
-    </a></h1>
+    </a>
   <div class="post-meta">
     {%- assign date_format = site.date_format | default: "%-d %b %Y" -%}
     <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: date_format }}</time>
