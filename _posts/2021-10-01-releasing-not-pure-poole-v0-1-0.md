@@ -8,19 +8,20 @@ tags:
 - Matching_Markets
 date: 2021-10-01 13:56 +0800
 conf: AAAI_2025
+url: https://arxiv.org/abs/2502.16128
 abstract: |
-  We study a hinted heterogeneous multi-agent multi-armed bandits problem (\texttt{HMA2B}), 
+  We study a hinted heterogeneous multi-agent multi-armed bandits problem (HMA2B), 
   where agents can query low-cost observations (hints) in addition to pulling arms. 
   In this framework, each of the $M$ agents has a unique reward distribution over $K$ arms, 
   and in $T$ rounds, they can observe the reward of the arm they pull only if no other agent pulls that arm.  
 
   The goal is to maximize the total utility by querying the minimal necessary hints without pulling arms, 
-  achieving time-independent regret. We study \texttt{HMA2B} in both centralized and decentralized setups. 
-  Our main centralized algorithm, \texttt{GP-HCLA}, which is an extension of \texttt{HCLA}, 
+  achieving time-independent regret. We study HMA2B in both centralized and decentralized setups. 
+  Our main centralized algorithm, GP-HCLA, which is an extension of HCLA, 
   uses a central decision-maker for arm-pulling and hint queries, achieving $O(M^4K)$ regret 
   with $O(MK\log T)$ adaptive hints. 
 
-  In decentralized setups, we propose two algorithms, \texttt{HD-ETC} and \texttt{EBHD-ETC}, 
+  In decentralized setups, we propose two algorithms, HD-ETC and EBHD-ETC, 
   that allow agents to choose actions independently through collision-based communication 
   and query hints uniformly until stopping, yielding $O(M^3K^2)$ regret with $O(M^3K\log T)$ hints, 
   where the former requires knowledge of the minimum gap and the latter does not. 
