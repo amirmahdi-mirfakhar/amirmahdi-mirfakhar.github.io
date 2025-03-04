@@ -29,7 +29,14 @@ layout: default
     </style>
 
 <article class="post">
-  <h1 class="post-title">{{ page.title }}</h1>
+  <h1 class="post-title">{{ page.title }} <a href="{{page.url}}" target="_blank">
+    arxiv 
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Icon_External_Link.png" 
+         alt="External Link" 
+         width="12" 
+         height="12" 
+         style="vertical-align: middle; margin-left: 5px;">
+    </a></h1>
   <div class="post-meta">
     {%- assign date_format = site.date_format | default: "%-d %b %Y" -%}
     <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: date_format }}</time>
@@ -49,14 +56,7 @@ layout: default
   <body>
 
     <h2>Abstract</h2>
-    <a href="https://arxiv.org/abs/2502.16128" target="_blank">
-    arXiv:2502.16128 
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Icon_External_Link.png" 
-         alt="External Link" 
-         width="12" 
-         height="12" 
-         style="vertical-align: middle; margin-left: 5px;">
-    </a>
+    
     <div id="output">
   {{ page.abstract | markdownify }}
     </div>
