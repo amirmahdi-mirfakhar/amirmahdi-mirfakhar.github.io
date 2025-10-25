@@ -1,7 +1,7 @@
 ---
 layout: post
 title: An Efficient Data Structure for Multi-Dimensional Online Learning
-author:  Nina Balcan, Hedyeh Beyhaghi, Amirmahdi Mirfakhar
+author:  Amirmahdi Mirfakhar, Nina Balcan, Hedyeh Beyhaghi
 tags:
 - Online_Learning
 - Data_Structures
