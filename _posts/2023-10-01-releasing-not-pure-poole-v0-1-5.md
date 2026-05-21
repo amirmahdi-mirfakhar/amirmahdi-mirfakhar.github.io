@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Bayesian Mechanism Design with Predictions
-author:  Amirmahdi Mirfakhar, Divyarthi Mohan, Hedyeh Beyhaghi
+author:  Hedyeh Beyhaghi, Amirmahdi Mirfakhar, Divyarthi Mohan
 tags:
 - Mechanism Design
 - Learning-Augmented Algorithms
