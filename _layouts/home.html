@@ -3,10 +3,10 @@ layout: default
 ---
 {% include home-header.html %}
 
-<div class="home-body">
+<div style="display: flex; gap: 2rem; align-items: flex-start;">
 
   <!-- LEFT: About Me, Publications, Ongoing Projects -->
-  <div class="home-main">
+  <div style="flex: 1; min-width: 0;">
 
     <div class="section">
       <h2 class="bio-title">About Me</h2>
@@ -65,28 +65,28 @@ layout: default
   </div>
 
   <!-- RIGHT: Services & Talks -->
-  <div class="home-sidebar-extra">
+  <div style="width: 200px; min-width: 200px; flex-shrink: 0;">
 
     <div class="section">
       <h2 class="bio-title">Services</h2>
-      <ul class="sidebar-list">
-        <li>Reviewer, NeurIPS 2025</li>
-        <li>Reviewer, ICML 2025</li>
-        <li>Reviewer, EC 2025</li>
-        <li>Reviewer, WINE 2025</li>
+      <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem;">
+        <li style="padding: 0.35rem 0; border-bottom: 1px solid #eee;">Reviewer, NeurIPS 2025</li>
+        <li style="padding: 0.35rem 0; border-bottom: 1px solid #eee;">Reviewer, ICML 2025</li>
+        <li style="padding: 0.35rem 0; border-bottom: 1px solid #eee;">Reviewer, EC 2025</li>
+        <li style="padding: 0.35rem 0;">Reviewer, WINE 2025</li>
       </ul>
     </div>
 
     <div class="section">
       <h2 class="bio-title">Talks</h2>
-      <ul class="sidebar-list">
-        <li>
-          <span class="talk-title">Multi-Agent Bandits with Hints</span>
-          <span class="talk-venue">AAAI 2025 · Philadelphia, PA</span>
+      <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem;">
+        <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">
+          <span style="display: block; font-weight: 500;">Multi-Agent Bandits with Hints</span>
+          <span style="display: block; font-size: 0.78rem; color: #888;">AAAI 2025 · Philadelphia, PA</span>
         </li>
-        <li>
-          <span class="talk-title">Two-Sided Learning in Matching Markets</span>
-          <span class="talk-venue">UMass Theory Seminar · 2024</span>
+        <li style="padding: 0.5rem 0;">
+          <span style="display: block; font-weight: 500;">Two-Sided Learning in Matching Markets</span>
+          <span style="display: block; font-size: 0.78rem; color: #888;">UMass Theory Seminar · 2024</span>
         </li>
       </ul>
     </div>
