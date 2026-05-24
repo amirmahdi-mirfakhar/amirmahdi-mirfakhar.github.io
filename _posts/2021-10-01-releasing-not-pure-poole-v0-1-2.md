@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Two-Sided Learning in Matching Markets with Interviews
+title: Two-Sided Time-Independent Regret for Matching Markets with Limited Interviews
 author: Amirmahdi Mirfakhar, Xuchuang Wang, Mengfan Xu, Hedyeh Beyhaghi, Mohammad Hajiesmaili 
 tags:
 - Online_Learning
