@@ -2,50 +2,105 @@
 layout: default
 ---
 
-
+<script>
+  window.MathJax = {
+    startup: {
+      ready() {
+        MathJax.startup.defaultReady();
+        MathJax.startup.promise.then(() => {
+          const output = document.getElementById('output');
+          if (output) output.style.visibility = 'visible';
+        });
+      }
+    }
+  };
+</script>
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-
-
 <style>
-        textarea {
-            width: 80%;
-            height: 100px;
-            font-size: 16px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-       #output {
-            margin-top: 20px;
-            padding: 15px;
-            min-height: 50px;
-            border: 1px solid #ddd;
-            background: #f9f9f9;
-            border-radius: 5px;
-            font-size: 18px;
-            text-align: left;
-        }
-    </style>
+  textarea {
+    width: 100%;
+    height: 120px;
+    font-size: 15px;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    background: #1e1e2e;
+    color: #cdd6f4;
+    resize: vertical;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  textarea:focus {
+    border-color: rgba(16, 185, 129, 0.6);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+  }
+  #output {
+    visibility: hidden;
+    margin-top: 0;
+    padding: 20px 24px;
+    min-height: 60px;
+    background: linear-gradient(135deg, #f8fffe 0%, #f0fdf8 100%);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 0 16px 2px rgba(16, 185, 129, 0.1);
+    font-size: 17px;
+    text-align: left;
+    line-height: 1.8;
+    color: #1a1a2e;
+  }
+  .abstract-wrapper {
+    margin-top: 2rem;
+    background: #ffffff;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    border-radius: 12px;
+    box-shadow: 0 0 24px 4px rgba(16, 185, 129, 0.08);
+    overflow: hidden;
+  }
+  .abstract-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.03));
+    border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+  }
+  .abstract-header h2 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #065f46;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .abstract-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.7);
+    box-shadow: 0 0 6px rgba(16, 185, 129, 0.5);
+  }
+  .abstract-body {
+    padding: 20px 24px;
+  }
+</style>
 
 <article class="post">
-  <h1 class="post-title">{{ page.title }}   <a href="{{page.link}}" target="_blank" style="display: inline-flex; align-items: center; background-color: #d32f2f; color: white; 
-          padding: 5px 8px; border-radius: 2px; text-decoration: none; font-weight: bold; 
-          font-size: 16px; box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);">
-    arxiv 
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Icon_External_Link.png" 
-         alt="External Link" 
-         width="12" 
-         height="12" 
-         style="vertical-align: middle; margin-left: 5px;">
-    </a></h1> 
-  
+  <h1 class="post-title">{{ page.title }}
+    <a href="{{ page.link }}" target="_blank" style="display: inline-flex; align-items: center; background-color: #d32f2f; color: white; 
+        padding: 5px 8px; border-radius: 2px; text-decoration: none; font-weight: bold; 
+        font-size: 16px; box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);">
+      arxiv
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Icon_External_Link.png"
+           alt="External Link" width="12" height="12"
+           style="vertical-align: middle; margin-left: 5px;">
+    </a>
+  </h1>
+
   <div class="post-meta">
-    {%- assign date_format = site.date_format | default: "%-d %b %Y" -%}
-    <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: date_format }}</time>
-   
     {%- if page.author -%}
-      <span> • </span>
       {% for author in page.author %}
         <span itemprop="author" itemscope itemtype="http://schema.org/Person">
           {{ author }}
@@ -56,52 +111,17 @@ layout: default
   </div>
 
   {{ content }}
-  <body>
 
-    <h2>Abstract </h2>
-    
-    <div id="output">
-  {{ page.abstract | markdownify }}
+  <div class="abstract-wrapper">
+    <div class="abstract-header">
+      <div class="abstract-dot"></div>
+      <h2>Abstract</h2>
     </div>
+    <div class="abstract-body">
+      <div id="output">
+        {{ page.abstract | markdownify }}
+      </div>
+    </div>
+  </div>
 
-   <script>
-    window.MathJax = {
-        tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']],
-            displayMath: [['\\[', '\\]']],
-            packages: {'[+]': ['textmacros']}  // Enables \texttt{}
-        },
-        svg: { fontCache: 'global' }
-    };
-
-    function renderLatex() {
-        let outputDiv = document.getElementById("output");
-
-        // Wrap the entire content inside MathJax block rendering
-        outputDiv.innerHTML = `\\[ ${outputDiv.innerHTML} \\]`;
-
-        if (window.MathJax && typeof MathJax.typesetPromise === "function") {
-            MathJax.typesetPromise()
-                .then(() => console.log("MathJax Rendered Successfully"))
-                .catch(err => console.error("MathJax Rendering Error:", err.message));
-        } else {
-            console.warn("MathJax not loaded yet. Retrying...");
-            setTimeout(renderLatex, 500);
-        }
-    }
-
-    document.addEventListener("DOMContentLoaded", renderLatex);
-</script>
-
-
-</body>
-
-  {% if page.tags %}
-    {% include post-tags.html %}
-  {% endif %}
-
-  {% if jekyll.environment == "production" and site.disqus and page.comments != false %}
-    {% include disqus.html %}
-  {% endif %}
 </article>
-
