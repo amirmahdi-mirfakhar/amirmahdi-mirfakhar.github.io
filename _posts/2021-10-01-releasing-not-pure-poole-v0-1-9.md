@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Bayesian Mechanism Design with Predictions
+title: Bayesian Mechanism Desing with Predictions
 author:  Hedyeh Beyhaghi, Amirmahdi Mirfakhar, Divyarthi Mohan
 tags:
 - Mechanism Design
@@ -8,5 +8,5 @@ tags:
 date: 2019-10-01 13:56 +0800
 conf: TBD
 abstract: |
-  In this work, we focus on studying the the problem of prior-free revenue maximization problem with hints.
+  In this work, we focus on studying the problem of prior-free revenue maximization problem with hints.
 ---
