@@ -4,18 +4,16 @@ layout: default
 
 <script>
   window.MathJax = {
-    startup: {
-      ready() {
-        MathJax.startup.defaultReady();
-        MathJax.startup.promise.then(() => {
-          const output = document.getElementById('output');
-          if (output) output.style.visibility = 'visible';
-        });
-      }
-    }
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['textmacros']}
+    },
+    svg: { fontCache: 'global' },
+    startup: { typeset: false }
   };
 </script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <style>
   textarea {
@@ -39,13 +37,9 @@ layout: default
   }
   #output {
     visibility: hidden;
-    margin-top: 0;
     padding: 20px 24px;
     min-height: 60px;
     background: linear-gradient(135deg, #f8fffe 0%, #f0fdf8 100%);
-    border: 1px solid rgba(16, 185, 129, 0.3);
-    border-radius: 10px;
-    box-shadow: 0 0 16px 2px rgba(16, 185, 129, 0.1);
     font-size: 17px;
     text-align: left;
     line-height: 1.8;
@@ -82,9 +76,6 @@ layout: default
     background: rgba(16, 185, 129, 0.7);
     box-shadow: 0 0 6px rgba(16, 185, 129, 0.5);
   }
-  .abstract-body {
-    padding: 20px 24px;
-  }
 </style>
 
 <article class="post">
@@ -117,11 +108,32 @@ layout: default
       <div class="abstract-dot"></div>
       <h2>Abstract</h2>
     </div>
-    <div class="abstract-body">
-      <div id="output">
-        {{ page.abstract | markdownify }}
-      </div>
+    <div id="output">
+      {{ page.abstract | markdownify }}
     </div>
   </div>
+
+  <script>
+    window.addEventListener('load', function () {
+      const outputDiv = document.getElementById('output');
+      function tryRender() {
+        if (window.MathJax && typeof MathJax.typesetPromise === 'function') {
+          MathJax.typesetPromise([outputDiv])
+            .then(() => { outputDiv.style.visibility = 'visible'; })
+            .catch(err => console.error('MathJax Error:', err));
+        } else {
+          setTimeout(tryRender, 100);
+        }
+      }
+      tryRender();
+    });
+  </script>
+
+  {% if page.tags %}
+    {% include post-tags.html %}
+  {% endif %}
+  {% if jekyll.environment == "production" and site.disqus and page.comments != false %}
+    {% include disqus.html %}
+  {% endif %}
 
 </article>
