@@ -2,6 +2,10 @@
 layout: default
 ---
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
 <style>
   .content {
     max-width: 100% !important;
@@ -12,6 +16,44 @@ layout: default
   }
   .post-meta {
     font-size: 0.95rem !important;
+  }
+  .side-label {
+    display: inline-block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin: 0.5rem 0 0.25rem;
+    color: #555;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    border-radius: 6px;
+    padding: 0.2rem 0.6rem;
+  }
+  .side-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.75rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #374151;
+  }
+  .side-list:last-child {
+    margin-bottom: 0;
+  }
+  .talk-title {
+    display: block;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #1F2937;
+  }
+  .talk-venue {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.01em;
+    color: #6B7280;
+    margin-top: 0.15rem;
   }
 </style>
 
@@ -87,69 +129,4 @@ layout: default
               padding: 1.25rem;">
 
     <div class="section">
-      <h2 class="bio-title" style="color: #FFA500;">Services</h2>
-
-      <p style="font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0 0.25rem; color: #555;">Program Committee</p>
-      <ul style="list-style: none; padding: 0; margin: 0 0 0.75rem; font-size: 0.85rem;">
-        <li style="padding: 0.35rem 0; border-bottom: 1px solid #eee;">EC'26, AAAI'27</li>
-      </ul>
-
-      <p style="font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0 0.25rem; color: #555;">Peer Reviewer</p>
-      <ul style="list-style: none; padding: 0; margin: 0 0 0.75rem; font-size: 0.85rem;">
-        <li style="padding: 0.35rem 0;">
-          NeurIPS'24, ICML'26 <span style="color: #D4A017; font-weight: 600;">⭐ Gold Reviewer</span>, NeurIPS'26
-        </li>
-      </ul>
-
-      <p style="font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0 0.25rem; color: #555;">Journal Reviewer</p>
-      <ul style="list-style: none; padding: 0; margin: 0 0 0.75rem; font-size: 0.85rem;">
-        <li style="padding: 0.35rem 0;">Management Science</li>
-      </ul>
-
-      <p style="font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0 0.25rem; color: #555;">Organizer</p>
-      <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem;">
-        <li style="padding: 0.35rem 0;">UMass Theory Seminar'25</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2 class="bio-title" style="color: #FFA500;">Talks</h2>
-      <p style="font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0 0.25rem; color: #555;">Invited Talks</p>
-      <ul style="list-style: none; padding: 0; margin: 0 0 0.75rem; font-size: 0.85rem;">
-        <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">
-          <span style="display: block; font-weight: 500;">Two-Sided Learning in Matching Markets with Interviews</span>
-          <span style="display: block; font-size: 0.78rem; color: #888;">INFORMS 2026 · San Francisco, CA</span>
-        </li>
-        <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">
-          <span style="display: block; font-weight: 500;">Multi-Agent Learning in Markets</span>
-          <span style="display: block; font-size: 0.78rem; color: #888;">INFORMS 2025 · Atlanta, GA</span>
-        </li>
-        <li style="padding: 0.5rem 0;">
-          <span style="display: block; font-weight: 500;">Multi-Agent Bandit Learning</span>
-          <span style="display: block; font-size: 0.78rem; color: #888;">UMass Theory Group Meeting · Amherst, MA</span>
-        </li>
-      </ul>
-      <p style="font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0 0.25rem; color: #555;">Posters</p>
-      <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem;">
-        <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">
-          <span style="display: block; font-weight: 500;">Learning in an Agentic World Workshop</span>
-          <span style="display: block; font-size: 0.78rem; color: #888;">COLT'26 · San Diego, CA</span>
-        </li>
-        <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">
-          <span style="display: block; font-weight: 500;">Workshop on Online Learning and Economics</span>
-          <span style="display: block; font-size: 0.78rem; color: #888;">EC'25 · Stanford University, CA</span>
-        </li>
-        <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">
-          <span style="display: block; font-weight: 500;">Workshop on Learning-augmented Algorithms</span>
-          <span style="display: block; font-size: 0.78rem; color: #888;">SIGMETRICS'25 · Stony Brook University, NY</span>
-        </li>
-        <li style="padding: 0.5rem 0;">
-          <span style="display: block; font-weight: 500;">Workshop on Fairness in Operations and AI</span>
-          <span style="display: block; font-size: 0.78rem; color: #888;">Columbia University · New York, NY</span>
-        </li>
-      </ul>
-    </div>
-
-  </div>
-
-</div>
+      <h2 class="bio-title" style="color:
