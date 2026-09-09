@@ -4,7 +4,6 @@ title: Optimal Prediction-Pricing Schemes
 author:  Tinashe Handina, Amirmahdi Mirfakhar, Eden Saige
 tags:
 - Economics of Information
-- Online_Learning
 - Learning-Augmented Algorithms
 - LLMs
 date: 2021-8-01 13:56 +0800
