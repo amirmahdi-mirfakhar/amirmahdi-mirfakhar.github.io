@@ -1,15 +1,13 @@
 ---
 layout: post
-title: Matching Markets with AI-Mediated Interviews
-author:  Amirmahdi Mirfakhar, Adam Wierman
+title: Optimal Prediction-Pricing Schemes
+author:  Tinashe Handina, Amirmahdi Mirfakhar, Eden Saige
 tags:
-- Matching_Markets
-- AI-Clones
-- Human-AI Interaction
-- Online_Learning
+- Economics of Information
+- Learning-Augmented Algorithms
 - LLMs
-date: 2021-10-01 13:56 +0800
+date: 2027-8-01 13:56 +0800
 conf: TBD
 abstract: |
-  LLMs as Interviewers...
+  Designing optimal pricing schemes for predictions to maximize the revenue of the provider...
 ---
